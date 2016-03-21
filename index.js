@@ -62,7 +62,7 @@ controller.hears('.*','direct_message,direct_mention,mention',function(bot,messa
   })
 
   wit.hears('rewards',0.5,function(bot,message,outcome){
-    bot.reply(message,'Your have 56,000 points, tap below to see your redemption options.');
+    bot.reply(message,'Your have 56,000 points, visit http://www.barclaycardus.com below to see your redemption options.');
   })
 
   wit.hears('pay',0.5,function(bot,message,outcome){
