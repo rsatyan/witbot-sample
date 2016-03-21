@@ -1,0 +1,27 @@
+{
+  "name": "witbot-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rsatyan/witbot-sample.git"
+  },
+  "author": "Satyan Avatara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsatyan/witbot-sample/issues"
+  },
+  "homepage": "https://github.com/rsatyan/witbot-sample",
+  "dependencies": {
+    "botkit": "0.0.12",
+    "moment": "^2.12.0",
+    "request": "^2.69.0",
+    "twilio": "^2.9.0",
+    "witbot": "^2.1.0"
+  }
+}

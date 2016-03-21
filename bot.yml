@@ -1,0 +1,9 @@
+name: bcus wit bot
+description: This is a sample demo bot
+config:
+  - name: OPENWEATHER_KEY
+  friendly_name: Open weather API key
+  info: Get this key from the open weather application you created on the web
+  - name: WIT_TOKEN
+  friendly_name: The Wit.ai API token
+  info: 
