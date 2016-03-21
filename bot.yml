@@ -9,4 +9,13 @@ config:
     info: Get this key from wit
   - name: SLACK_TOKEN
     friendly_name: The slack RTM API token
-    info: Get this from slack 
+    info: Get this from slack
+  - name: TWILIO_ACCOUNT_SID
+    friendly_name: Twilio Account ID
+    info: Get this from Twilio
+  - name: TWILIO_AUTH_TOKEN
+    friendly_name: Twilio authorization token
+    info: Get this from Twilio
+  - name: TWILIO_NUMBER
+    friendly_name: Twilio number
+    info: Get this from Twilio

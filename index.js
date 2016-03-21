@@ -1,5 +1,6 @@
-var Botkit = require('botkit')
-var Witbot = require('witbot')
+var Botkit = require('botkit');
+var Witbot = require('witbot');
+var twilio = require('twilio');
 var moment = require('moment');
 
 var slackToken = process.env.SLACK_TOKEN
@@ -9,6 +10,15 @@ var witToken = process.env.WIT_TOKEN
 var openWeatherAPI = process.env.OPENWEATHER_KEY
 //'3334736084fe683afc94064b5130f105'
 var weather = require('./weather')(openWeatherAPI)
+
+var accountSid=process.env.TWILIO_ACCOUNT_SID;
+// Twilio Auth Token - found on your dashboard
+var authToken=process.env.TWILIO_AUTH_TOKEN;
+// A Twilio number that you have purchased through the twilio.com web
+// interface or API
+var twilioNumber=process.env.TWILIO_NUMBER;
+
+var client = twilio(accountSid,authToken);
 
 var controller  = Botkit.slackbot({
   debug:false
@@ -60,7 +70,15 @@ controller.hears('.*','direct_message,direct_mention,mention',function(bot,messa
   })
 
   wit.hears('callme',0.5,function(bot,message,outcome){
-    bot.reply(message,'Your account ending in 3212 will be credited $231.23');
+    bot.reply(message,'Connecting you to an advisor. Please hold.');
+    client.calls.create({
+      url: "http://demo.twilio.com/docs/voice.xml",
+      to: "+13027401050",
+      from: "+3013386647"
+    }, function(err, call) {
+      process.stdout.write(call.sid);
+    });
+
   })
 
   wit.hears('weather',0.5,function(bot,message,outcome){
