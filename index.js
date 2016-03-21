@@ -74,9 +74,10 @@ controller.hears('.*','direct_message,direct_mention,mention',function(bot,messa
     client.calls.create({
       url: "http://demo.twilio.com/docs/voice.xml",
       to: "+13027401050",
-      from: "+3013386647"
+      from: "+13013386647"
     }, function(err, call) {
-      process.stdout.write(call.sid);
+      console.log(err);
+      //process.stdout.write(call.sid);
     });
 
   })
